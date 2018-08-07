@@ -1,10 +1,12 @@
 const croppieInit = function () {
-    const c = new Croppie(document.getElementById('my-image'), {
-        viewport: { width: 100, height: 100 }, //viewport: { width: 100, height: 100, type: 'circle' }, deixa redondo
-        boundary: { width: 300, height: 300},
-
+    var element = document.getElementById('my-image')
+    const c = new Croppie(element, {
+        viewport: { width: 200, height: 200 }, //viewport: { width: 100, height: 100, type: 'circle' }, deixa redondo
+        boundary: { width: 300, height: 300 },
+        enableOrientation: true,
         enableResize: true,
     });
+
 
     document.getElementById('save').addEventListener('click', function () {
         c.result('blob').then(function (blob) {
@@ -17,7 +19,18 @@ const croppieInit = function () {
 
         });
     });
+
+    document.getElementById('rotateL').addEventListener('click', function () {
+        c.rotate(parseInt(-90));
+    });
+
+    document.getElementById('rotateR').addEventListener('click', function () {
+        c.rotate(parseInt(90));
+    });
 }
+
+
+
 
 const getReadFile = function (reader, element) {
     return function () {
@@ -41,7 +54,7 @@ const fileReader = function (e) {
 }
 
 const init = function () {
-    document.getElementById('file').addEventListener('change', fileReader);
+    document.getElementById('arquivo').addEventListener('change', fileReader);
 }
 
 init();
