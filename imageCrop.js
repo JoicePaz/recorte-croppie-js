@@ -15,8 +15,7 @@ const croppieInit = function () {
 
             const img = document.createElement('img');
             img.src = imageURL;
-            document.getElementsByTagName('body')[0].appendChild(img);
-
+            document.getElementById('img').appendChild(img);
         });
     });
 
@@ -28,8 +27,6 @@ const croppieInit = function () {
         c.rotate(parseInt(90));
     });
 }
-
-
 
 
 const getReadFile = function (reader, element) {

@@ -20,7 +20,7 @@
         <div class="input-group">
           <div class="custom-file">
             <input type="file" class="custom-file-input" id="arquivo" aria-describedby="inputGroupFileAddon04">
-            <label class="custom-file-label" for="arquivo">Escolher um arquivo</label>
+            <label class="custom-file-label">Escolher um arquivo</label>
           </div>
         </div>
       </div>
@@ -28,7 +28,7 @@
 
     <div class="row">
       <div class="col-sm-1">
-        <button type="button" class="btn btn-primary" id="save">Cortar</button>
+        <button type="button" class="btn btn-primary" id="save" data-toggle="modal" data-target="#modal">Cortar</button>
       </div>
       <div class="col-sm-3">
         <button type="button" class="btn btn-primary" id="rotateL">Rotacionar para esquerda</button>
@@ -39,11 +39,33 @@
     </div>
 
   </div>
+
   <div class="row">
     <div class="col-12">
       <div id="image"></div>
     </div>
   </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Imagem cortada</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>E aí, gostou?</p>
+          <div id="img"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Salvar</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.2/croppie.min.js"></script>
