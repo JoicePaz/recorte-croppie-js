@@ -14,11 +14,10 @@ const croppieInit = function () {
 
             const img = document.createElement('img');
             img.src = imageURL;
-            
-            const a = document.createElement('a');
 
+            const a = document.createElement('a');
             a.href = img.src;
-            a.download = 'file';
+            a.download = 'cropped-file';
             a.id = 'link';
 
             document.getElementById('img').appendChild(a);
@@ -33,8 +32,8 @@ const croppieInit = function () {
 
     document.getElementById('rotateR').addEventListener('click', function () {
         c.rotate(parseInt(90));
-    });     
-   
+    });
+
 }
 
 const getReadFile = function (reader, element) {
@@ -50,7 +49,7 @@ const getReadFile = function (reader, element) {
 }
 
 const fileReader = function (e) {
-    document.getElementById('btn').style.visibility = "visible" ;
+    document.getElementById('btn').style.visibility = "visible";
 
     const files = e.target.files;
     const element = document.getElementById('image');
