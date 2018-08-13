@@ -1,12 +1,11 @@
 const croppieInit = function () {
     var element = document.getElementById('my-image')
     const c = new Croppie(element, {
-        viewport: { width: 200, height: 200 }, //viewport: { width: 100, height: 100, type: 'circle' }, deixa redondo
+        viewport: { width: 200, height: 200 },
         boundary: { width: 300, height: 300 },
         enableOrientation: true,
         enableResize: true,
     });
-
 
     document.getElementById('save').addEventListener('click', function () {
         c.result('blob').then(function (blob) {
@@ -15,8 +14,17 @@ const croppieInit = function () {
 
             const img = document.createElement('img');
             img.src = imageURL;
-            document.getElementById('img').appendChild(img);
+            
+            const a = document.createElement('a');
+
+            a.href = img.src;
+            a.download = 'file';
+            a.id = 'link';
+
+            document.getElementById('img').appendChild(a);
+            document.getElementById('link').appendChild(img);
         });
+
     });
 
     document.getElementById('rotateL').addEventListener('click', function () {
@@ -25,9 +33,9 @@ const croppieInit = function () {
 
     document.getElementById('rotateR').addEventListener('click', function () {
         c.rotate(parseInt(90));
-    });
+    });     
+   
 }
-
 
 const getReadFile = function (reader, element) {
     return function () {
@@ -42,6 +50,8 @@ const getReadFile = function (reader, element) {
 }
 
 const fileReader = function (e) {
+    document.getElementById('btn').style.visibility = "visible" ;
+
     const files = e.target.files;
     const element = document.getElementById('image');
 

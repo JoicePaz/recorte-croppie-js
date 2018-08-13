@@ -19,6 +19,10 @@
     #margemTop {
       margin-top: 3%;
     }
+
+    #btn {
+      visibility: hidden;
+    }
   </style>
 </head>
 
@@ -43,21 +47,23 @@
         </div>
 
         <div class="col-sm-7">
-          <div class="row" id="margemTop">
-            <div class="col-sm-1">
-              <button type="button" class="btn btn-primary" id="rotateL">
-                <i class="fas fa-caret-square-left"></i>
-              </button>
-            </div>
-            <div class="col-sm-1">
-              <button type="button" class="btn btn-primary" id="rotateR">
-                <i class="fas fa-caret-square-right"></i>
-              </button>
-            </div>
-            <div class="col-sm-1">
-              <button type="button" class="btn btn-primary" id="save" data-toggle="modal" data-target="#modal">
-                <i class="fas fa-cut"></i>
-              </button>
+          <div id="btn">
+            <div class="row" id="margemTop">
+              <div class="col-sm-1">
+                <button type="button" class="btn btn-primary" id="rotateL">
+                  <i class="fas fa-caret-square-left"></i>
+                </button>
+              </div>
+              <div class="col-sm-1">
+                <button type="button" class="btn btn-primary" id="rotateR">
+                  <i class="fas fa-caret-square-right"></i>
+                </button>
+              </div>
+              <div class="col-sm-1">
+                <button type="button" class="btn btn-primary" id="save" data-toggle="modal" data-target="#modal">
+                  <i class="fas fa-cut"></i>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -90,9 +96,6 @@
         <div class="modal-body">
           <p>E aí, gostou?</p>
           <div id="img"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Salvar</button>
         </div>
       </div>
     </div>
